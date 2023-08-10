@@ -58,16 +58,54 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Support
+## 資料夾結構說明
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+```
+NESTJS_TYPEORM_SQLITE_TYPESCRIPT
+│  .eslintrc.js
+│  .gitignore
+│  .prettierrc
+│  nest-cli.json
+│  package-lock.json
+│  package.json
+│  README.md
+│  tsconfig.build.json
+│  tsconfig.json
+│
+├─.vscode
+│      extensions.json
+│      settings.json
+│
+├─src
+│  │  app.controller.spec.ts
+│  │  app.controller.ts
+│  │  app.module.ts
+│  │  app.service.ts
+│  │  data-source.ts
+│  │  main.ts
+│  │
+│  ├─migrations
+│  │      1691562664900-CreateUsers.ts
+│  │
+│  └─users
+│      │  user.entity.ts
+│      │  users.module.ts
+│      │
+│      ├─controller
+│      │      users.controller.spec.ts
+│      │      users.controller.ts
+│      │
+│      ├─dto
+│      │      create-user.dto.ts
+│      │      update-user.dto.ts
+│      │
+│      └─services
+│              users.service.spec.ts
+│              users.service.ts
+│
+└─test
+        app.e2e-spec.ts
+        jest-e2e.json
+```
 
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+[其他資訊](https://hackmd.io/9GNXtZpxTCSJc2fDRHuq_Q?both)
