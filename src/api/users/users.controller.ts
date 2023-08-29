@@ -9,11 +9,13 @@ import {
   Post,
   Response,
 } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
 import { DeleteResult, UpdateResult } from 'typeorm';
-import { CreateUserDto } from '../dto/create-user.dto';
-import { UsersService } from '../services/users.service';
-import { User } from '../user.entity';
+import { CreateUserDto } from './dto/create-user.dto';
+import { User } from './entities/user.entity';
+import { UsersService } from './users.service';
 
+@ApiTags('Users')
 @Controller('users')
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}

@@ -1,5 +1,5 @@
 import { DataSource, DataSourceOptions } from 'typeorm';
-import { User } from './users/user.entity';
+import { User } from './api/users/entities/user.entity';
 
 const options: DataSourceOptions = {
   type: 'sqlite',

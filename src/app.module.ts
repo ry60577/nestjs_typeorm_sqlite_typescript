@@ -1,19 +1,18 @@
 import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { UsersModule } from './api/users/users.module';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { UsersModule } from './users/users.module';
+
+const testDBModule = TypeOrmModule.forRoot({
+  type: 'sqlite',
+  database: './database/testDB',
+  synchronize: true,
+  autoLoadEntities: true,
+});
 
 @Module({
-  imports: [
-    TypeOrmModule.forRoot({
-      type: 'sqlite',
-      database: './database/testDB',
-      synchronize: true,
-      autoLoadEntities: true,
-    }),
-    UsersModule,
-  ],
+  imports: [testDBModule, UsersModule],
   controllers: [AppController],
   providers: [AppService],
 })
